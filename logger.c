@@ -75,11 +75,9 @@ int logger_log(int loglevel,char *path,char *content) {
 		exit(1);
 	}
 	sprintf(logdate,"%04d-%02d-%02d",year,month,day);
-	sprintf(logcontent,"[%s %s %06ld] [%s] %s\n",logdate,__TIME__,logger->count,loglevel_s[loglevel],content);
+	fprintf(pfile,"[%s %s %06ld] [%s] %s\n",logdate,__TIME__,logger->count,loglevel_s[loglevel],content);
 
-	fputs(logcontent,pfile);
-
-	printf("filename:%s==>%s\n",filename,logcontent);
+	fflush(pfile);
 	fclose(pfile);
 	return logger->count;
 }
