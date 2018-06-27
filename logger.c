@@ -74,7 +74,7 @@ int logger_log(int loglevel,char *path,char *content) {
 		printf("failed to append log");
 		exit(1);
 	}
-	sprintf(logdate,"%04d:%02d:%02d.log",year,month,day);
+	sprintf(logdate,"%04d-%02d-%02d",year,month,day);
 	sprintf(logcontent,"[%s %s %06ld] [%s] %s\n",logdate,__TIME__,logger->count,loglevel_s[loglevel],content);
 
 	fputs(logcontent,pfile);
