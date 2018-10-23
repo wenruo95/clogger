@@ -19,7 +19,7 @@ int logger_init(char *name,int loglevel) {
 	struct tm beg = *localtime(&now);
 	logger->last_seconds = mktime(&beg);
 
-	printf("init");
+	//printf("init");
 	logger_log(SYSTEM,"logger","op=init");
 	return 0;
 }

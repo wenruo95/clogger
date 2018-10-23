@@ -9,11 +9,11 @@
 
 # 编译
 
-log和系统函数重复
+	make
 
-	//gcc logger.c -fno-builtin
-	gcc logger.c test-logger.c
+# 清除
 
+	make clear
 
 # 函数调用
 
